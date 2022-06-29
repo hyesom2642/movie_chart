@@ -1,13 +1,15 @@
 import Action from '../../Action/Action';
 import BestMovie from '../../BestMovie/BestMovie';
 import Romance from '../../Romance/Romance';
+import Horror from '../../Horror/Horror';
 
 const Home = () => {
   return(
     <>
-      <Action />
       <BestMovie />
+      <Action />
       <Romance />
+      <Horror />
     </>
   )
 }
