@@ -33,6 +33,12 @@ body {
   font-family: 'Poppins', sans-serif;
   background: var(--dark-color-black);
   color: var(--dark-color-white);
+  padding-bottom: 5%;
+}
+
+.dark {
+  --dark-background-color: #000;
+  --dark-font-color: #fff;
 }
 
 
@@ -62,11 +68,14 @@ img {
 
 /* ===== Media Query(Tablet Devices) ===== */
 @media screen and (max-width: 1024px) {
+  section {
+    margin-top: 2rem;
+  }
   .container {
     width: var(--container-width-md);
   }
-  section {
-    margin-top: 2rem;
+  .title {
+    font-size: 40px;
   }
 }
 /* ===== Media Query(Mobile Devices) ===== */
