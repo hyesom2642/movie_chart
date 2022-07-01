@@ -13,17 +13,19 @@ import { useParams, Link } from 'react-router-dom';
 const Detail = () => {
   const {id} = useParams();
   const [movie, setMovie] = useState([]);
-
+  const [letter, setLetter] = useState();
+  
   useEffect( () => {
     fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
       .then((response) => response.json())
       .then((json) => {
         setMovie(json.data.movie);
+        setLetter(json.data.movie.description_full);
       })
       .catch((error) => {
         console.log(`error: ${error}`)
       });
-  });
+  }, []);
 
   return(
     <>
@@ -54,7 +56,17 @@ const Detail = () => {
               ? <p className={`${style.right__summary}`}>{movie.description_full}</p>
               : movie.description_full.substr(0,999)+" ..."
             } */}
-            <p className={`${style.right__summary}`}>{movie.description_full}</p>
+            {/* {
+              movie && movie.genres.map((g, i) => (
+                <div className={`${style.right__genres__item}`} key={i}>{g}</div>
+              ))
+            } */}
+            <p className={`${style.right__summary}`}>
+              {
+                letter && letter.length > 1000 ? letter.substr(0, 999) + ' ...' : letter
+              }
+            </p>
+            {/* <p className={`${style.right__summary}`}>{movie.description_full}</p> */}
           </div>
         </div>
       </div>

@@ -9,3 +9,16 @@
 .slide__img__wrapper {
   margin: 0 10px;
 }
+
+/* ===== Media Query(Tablet Devices) ===== */
+@media screen and (max-width: 1024px) {
+  .title__romance {
+    font-size: 45px;
+  }
+}
+/* ===== Media Query(Mobile Devices) ===== */
+@media screen and (max-width: 600px) {
+  .title__romance {
+    font-size: 40px;
+  }
+}

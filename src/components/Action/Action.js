@@ -13,7 +13,7 @@ import { BiRightArrow } from "react-icons/bi";
 // >  react-router-dom@6
 import { Link } from 'react-router-dom';
 
-const Action = () => {
+const Action = ({}) => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     fetch("https://yts.mx/api/v2/list_movies.json?genre=action&&minimum_rating=8.5")
@@ -22,7 +22,6 @@ const Action = () => {
       setMovies(json.data.movies);
     })
   }, []);
-
   const settings = {
     dots: false,
     arrows: false,
@@ -34,7 +33,26 @@ const Action = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
     centerMode: true,
-    cssEase: "linear"
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          // slidesToScroll: 3,
+          infinite: true,
+          // dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          // slidesToScroll: 2,
+          initialSlide: 2
+        }
+      }
+    ]
   };
 
   return(
@@ -50,7 +68,10 @@ const Action = () => {
               movies.map( (movie, i) => (
                 <Link to={`/movie/${movie.id}`} key={i}>
                   <div className={`${style.slide__img__wrapper}`}>
-                    <img src={movie.medium_cover_image} alt={movie.title}/>
+                    <img src={movie.medium_cover_image} alt={movie.title} className={`${style.images2}`} />
+                    <div className={`${style.btn__wrapper}`}>
+                      <button type="button" className={`${style.more__btn}`}>상세보기</button>
+                    </div>
                   </div>
                 </Link>
               ))

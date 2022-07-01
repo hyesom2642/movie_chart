@@ -1,11 +1,25 @@
 .wrapper {
   position: relative;
+  height: 100vh;
 }
 
 .background__images {
   position: relative;
-  height: auto;
+  height: 100%;
   z-index: 1;
+}
+
+.ic__back {
+  position: absolute;
+  left: 13%;
+  top: 50px;
+  color: #fff;
+  z-index: 9999;
+  font-size: 80px;
+  transition: all 0.3s ease-in-out;
+}
+.ic__back:hover {
+  transform: scale(0.9);
 }
 
 .detail__container {
@@ -20,18 +34,6 @@
   z-index: 100;
 }
 
-.ic__back {
-  position: absolute;
-  left: 13%;
-  top: 50px;
-  color: #fff;
-  z-index: 5;
-  font-size: 80px;
-  transition: all 0.3s ease-in-out;
-}
-.ic__back:hover {
-  transform: scale(0.9);
-}
 
 .left {
   margin-right: 50px;
@@ -40,7 +42,7 @@
 .right {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   width: 60vw;
   height: 100%;
@@ -49,6 +51,7 @@
   font-size: 50px;
   font-weight: 600;
   margin: 20px 0;
+  color: #fff;
 }
 .right__rating, .right__runtime {
   font-size: 25px;
@@ -61,7 +64,7 @@ ul.right__genres__list {
   align-items: flex-start;
   margin-bottom: 15px;
 }
-li.right__genres__item {
+.right__genres__item {
   width: 100%;
   border: 1px solid #eee;
   border-radius: 50px;
@@ -69,9 +72,94 @@ li.right__genres__item {
   padding: 3px 15px;
   text-align: center;
 }
-li.right__genres__item:last-child {
+.right__genres__item:last-child {
   margin-right: 0;
 }
 p.right__summary {
   font-size: 18px;
+}
+
+/* ===== Media Query(Tablet Devices) ===== */
+@media screen and (max-width: 1024px) {
+
+  .ic__back {
+    left: 30px;
+    top: 30px;
+    font-size: 70px;
+  }
+
+  .background__images {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .detail__container {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 30px;
+  }
+
+  .right__title {
+    font-size: 40px;
+    margin: 10px 0;
+  }
+
+  .right__rating, .right__runtime {
+    margin-bottom: 10px;
+  }
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 10; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+  }
+}
+/* ===== Media Query(Mobile Devices) ===== */
+@media screen and (max-width: 600px) {
+  .detail__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 30px;
+  }
+  .ic__back {
+    font-size: 50px;
+  }
+  .left__poster {
+    width: 250px;
+  }
+  .left {
+    margin-right: 0;
+  }
+  .right {
+    width: 100%;
+    align-items: center;
+  }
+  .right__title {
+    font-size: 30px;
+    margin: 10px 0;
+  }
+  .right__rating, .right__runtime {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+  }
 }
