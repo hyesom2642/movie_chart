@@ -11,10 +11,15 @@ import Slider from "react-slick";
 import { BiRightArrow } from "react-icons/bi";
 
 // >  react-router-dom@6
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Action = ({}) => {
+const Action = () => {
   const [movies, setMovies] = useState([]);
+  const navigate = useNavigate();
+  const onClickTitle = () => {
+    navigate(`/movie/genre/action`);
+  };
+
   useEffect(() => {
     fetch("https://yts.mx/api/v2/list_movies.json?genre=action&&minimum_rating=8.5")
     .then((response) => response.json())
@@ -22,6 +27,7 @@ const Action = ({}) => {
       setMovies(json.data.movies);
     })
   }, []);
+
   const settings = {
     dots: false,
     arrows: false,
@@ -59,7 +65,10 @@ const Action = ({}) => {
     <>
       <section>
         <div className={`container ${style.container__action}`}>
-          <h1 className={`title ${style.title__action}`}>
+          <h1 
+            className={`title ${style.title__action}`}
+            onClick={ onClickTitle }
+          >
             <BiRightArrow />
             Action
           </h1>
