@@ -48,6 +48,14 @@ body {
   margin: 0 auto;
 }
 
+.title {
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+.title:hover {
+  opacity: 0.8;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
