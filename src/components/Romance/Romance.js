@@ -11,10 +11,15 @@ import Slider from "react-slick";
 import { BiRightArrow } from "react-icons/bi";
 
 // >  react-router-dom@6
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Romance = () => {
   const [movies, setMovies] = useState([]);
+  const navigate = useNavigate();
+  const onClickTitle = () => {
+    navigate(`/movie/genre/romance`);
+  }
+
   useEffect(() => {
     fetch("https://yts.mx/api/v2/list_movies.json?genre=romance&&minimum_rating=8.5")
     .then((response) => response.json())
@@ -60,7 +65,10 @@ const Romance = () => {
     <>
       <section>
         <div className={`container ${style.container__action}`}>
-          <h1 className={`title ${style.title__romance}`}>
+          <h1 
+            className={`title ${style.title__romance}`}
+            onClick={ onClickTitle }  
+          >
             <BiRightArrow />
             Romance
           </h1>
