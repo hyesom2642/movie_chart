@@ -31,47 +31,25 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: var(--dark-color-black);
-  color: var(--dark-color-white);
-  padding-bottom: 5%;
+  background: #000;
+  width: 100vw;
+  height: 100vh;
 }
 
-.dark {
-  --dark-background-color: #000;
-  --dark-font-color: #fff;
-}
-
-
-/* ===== ===== */
-.container {
-  width: var(--container-width-lg);
-  margin: 0 auto;
-}
-
-.title {
-  cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
-}
-.title:hover {
-  opacity: 0.8;
+/* ===== 공통 요소 ===== */
+a {
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
-section {
-  margin-top: 4rem;
-}
-
 img {
   display: block;
   width: 100%;
   object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* ===== Media Query(Tablet Devices) ===== */
