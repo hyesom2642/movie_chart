@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# :movie_camera: HYEONCINEMA : 영화 웹 서비스
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# :hammer: Using :hammer:
 
-In the project directory, you can run:
+<img src="https://img.shields.io/badge/React ^18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white"/>
+<img src="https://img.shields.io/badge/React Dom ^18.2.0-0088CC?style=for-the-badge&logo=ReactOS&logoColor=white"/>
+<img src="https://img.shields.io/badge/React Router Dom ^6.3.0-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"/>
+<img src="https://img.shields.io/badge/Styled Components ^5.3.5-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/>
+<img src="https://img.shields.io/badge/Swiper ^8.3.0-6332F6?style=for-the-badge&logo=Swiper&logoColor=white"/>
+<img src="https://img.shields.io/badge/Axios ^0.27.2-222222?style=for-the-badge&logoColor=white"/>
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# :open_file_folder: 각 페이지 별 기능 :open_file_folder:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 1. Home Page
 
-### `npm test`
+(1) Navbar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ① Home으로 이동 할 수 있는 로고
+- ② 클릭시 각 페이지로 이동(상영중인 영화, 인기 영화, 영화 평점순, 상영예정작)
+- ③ 클릭시 회원가입과 로그인form modal 팝업
+- ④ window.scrollY가 50이상일 경우 배경색이 검정색이 되도록 만듦
 
-### `npm run build`
+(2) MainSlider
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ① react swiper를 사용하여 현재 상영중인 영화 6편을 slider로 만듦
+- ② axios를 사용하여 The Movie Database(TMDB)사이트의 API를 가져와서 slide에 넣어줌
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+(3) TopRatedSlider, UpComingSlider
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ① react swiper를 사용하여 영화 평점순, 상영예정작인 영화 20편을 slider로 만듦
+- ② 영화 포스터를 hover시 영화제목과 평점이 나오며 클릭하면 해당 영화의 상세 페이지로 이동
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 2. Detail Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+(1) Back Icon
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- ①
+- ②
+- ③
+- ④
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 3.
