@@ -3,24 +3,37 @@ import styled from 'styled-components';
 
 // > components 
 import NavItem from './NavItem';
-import NavSign from './NavSign';
 
 // > data 
-import NavMenuItems from './NavData';
+import NavItem_Obj from './NavData';
+import NavSign from './NavSign';
+
+// > 
+import { useState, useEffect } from 'react';
 
 const Nav = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  const scrollPosition = () => {
+    setScrollY(window.scrollY);
+  }
+  useEffect(() => {
+    // console.log("scrollY값: ", scrollY);
+    window.addEventListener("scroll", scrollPosition);
+  }, [scrollY]);
+
   return(
     <>
-      <NavContainer>
-        <NavItem NavMenuItems={NavMenuItems} />
+      <Container className={scrollY > 50 ? "bgColor" : null}>
+        <NavItem NavItem_Obj={NavItem_Obj} />
         <NavSign />
-      </NavContainer>
+      </Container>
     </>
   )
 }
 export default Nav;
 
-const NavContainer = styled.div`
+const Container = styled.div`
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -29,5 +42,9 @@ const NavContainer = styled.div`
   height: 60px;
   padding: 0 30px;
   background-color: inherit;
-  z-index: 100;
+  z-index: 10;
+
+  &.bgColor {
+    background-color: #000;
+  }
 `;

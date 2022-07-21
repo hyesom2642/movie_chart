@@ -1,31 +1,35 @@
-// > styled-components 
+// > css 
 import styled from 'styled-components';
 
 const NavSign = () => {
-  return(
-    <>
-      <NavSignContainer>
-        <SignItem>
-          로그인
-        </SignItem>
-        <SignItem>
-          회원가입
-        </SignItem>
-      </NavSignContainer>
-    </>
-  )
+    return(
+        <>
+            <SignContainer>
+                <SignItem>
+                    회원가입
+                </SignItem>
+                <SignItem>
+                    로그인
+                </SignItem>
+            </SignContainer>
+        </>
+    )
 }
 export default NavSign;
 
-const NavSignContainer = styled.div`
-  display: flex;
+const SignContainer = styled.ul`
+    display: flex;
 `;
-const SignItem = styled.div`
-  margin-right: 20px;
-  color: #fff;
-  cursor: pointer;
-
-  &:last-child {
-    margin-right: 0;
-  }
+const SignItem = styled.li`
+    cursor: pointer;
+    color: #fff;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+    
+    &:last-child {
+        margin-right: 0;
+    }
+    &:hover {
+        font-weight: bold;
+    }
 `;
