@@ -10,12 +10,16 @@ import { API_KEY, BASE_PATH } from '../../Api';
 
 // > components 
 import MainSlider from '../Slider/MainSlider';
+import TopRatedSlider from '../Slider/TopRatedSlider';
+import UpComingSlider from '../Slider/UpComingSlider';
 
 const Home = () => {
   const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
+  const [upComingMovies, setUpComingMovies] = useState([]);
 
 	const nowPlayingGetMovies = async () => {
-		await axios
+		await axios 
 			.get(`${BASE_PATH}/movie/now_playing?api_key=${API_KEY}&language=ko`)
 			.then((res) => {
 				setNowPlayingMovies(res.data.results);
@@ -25,14 +29,40 @@ const Home = () => {
 			});
 	};
 
+  const TopRatedGetMovies = async () => {
+    await axios
+      .get(`${BASE_PATH}/movie/top_rated?api_key=${API_KEY}&language=ko`)
+      .then((res) => {
+        setTopRatedMovies(res.data.results);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const UpComingGetMovies = async () => {
+    await axios
+      .get(`${BASE_PATH}/movie/upcoming?api_key=${API_KEY}&language=ko`)
+      .then((res) => {
+        setUpComingMovies(res.data.results);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect( () => {
     nowPlayingGetMovies();
+    TopRatedGetMovies();
+    UpComingGetMovies();
   }, [])
 
   return(
     <>
       <Container>
         <MainSlider nowPlayingMovies={nowPlayingMovies} />
+        <TopRatedSlider topRatedMovies={topRatedMovies} />
+        <UpComingSlider upComingMovies={upComingMovies}/>
       </Container>
     </>
   )
