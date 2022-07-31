@@ -56,29 +56,98 @@ export default MainSlider;
 
 const MainSwiper = styled(Swiper)`
     position: relative;
-    display: flex;
     width: 100vw;
     height: calc(100vh-60px);
-    min-height: 500px;
 
     .swiper-button-next,
     .swiper-button-prev {
-        width: 100px;
-        height: 100px;
+        width: 40px;
+        height: 40px;
     }
     .swiper-button-prev::after,
     .swiper-button-next::after {
-        font-size: 80px;
+        font-size: 40px;
         color: #fff;
     }
-`;
 
+    @media ${props => props.theme.tablet} {
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 60px;
+            height: 60px;
+        }
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 60px;
+            color: #fff;
+        }
+    }
+    @media ${props => props.theme.desktop} {
+        max-height: 85vh;
+        
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 80px;
+            height: 80px;
+        }
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 80px;
+            color: #fff;
+        }
+    }
+`;
 const Text = styled.div`
     position: absolute;
-    top: 15%;
-    left: 5%;
-    width: 40%;
-    height: 50%;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    height: 100%;
     color: #fff;
     z-index: 50;
+
+    @media ${props => props.theme.tablet} {
+        height: 50%;
+        left: 10%;
+        top: 20%;
+    }
+    
 `;
+
+// const MainSwiper = styled(Swiper)`
+//     position: relative;
+//     display: flex;
+//     width: 100vw;
+//     height: calc(100vh-60px);
+//     min-height: 500px;
+
+//     .swiper-button-next,
+//     .swiper-button-prev {
+//         width: 100px;
+//         height: 100px;
+//     }
+//     .swiper-button-prev::after,
+//     .swiper-button-next::after {
+//         font-size: 80px;
+//         color: #fff;
+//     }
+
+//     // tablet
+//     @media ${props => props.theme.md} {
+//     }
+
+//     // mobile
+//     @media ${props => props.theme.sm} {
+//         min-height: 0;
+
+//         .swiper-button-next,
+//         .swiper-button-prev {
+//             width: 50px;
+//             height: 50px;
+//         }
+//         .swiper-button-prev::after,
+//         .swiper-button-next::after {
+//             font-size: 50px;
+//         }
+//     }
+// `;
