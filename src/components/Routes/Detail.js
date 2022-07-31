@@ -68,13 +68,13 @@ const DetailContainer = styled.div`
 const BackIcon = styled.div`
     position: absolute;
     top: 100px;
-    left: 15%;
-    width: 60px;
-    height: 60px;
+    left: 5%;
+    width: 50px;
+    height: 50px;
     z-index: 100;
     background-image: url(${backIcon});
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: contain;
     transition: all 0.3s ease-in-out;
     

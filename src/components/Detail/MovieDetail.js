@@ -1,13 +1,13 @@
-// > styled components 
+// > styled components
 import styled from 'styled-components';
 
 const MovieDetail = ({bgImg, posterImg, title, genres, rating, runtime, overview}) => {
     return(
         <>  
             <MovieWrapper>
-                <MovieDetailBg bgImg={bgImg} />
+                <MovieDetailBg bgImg={bgImg} posterImg={posterImg} />
                 <MovieContainer>
-                    <MoviePoster  posterImg={posterImg} />
+                    <MoviePoster posterImg={posterImg} />
                     <MovieInfo>
                         <h1>{title}</h1>
                         <GenreWrapper>
@@ -19,7 +19,11 @@ const MovieDetail = ({bgImg, posterImg, title, genres, rating, runtime, overview
                         </GenreWrapper>
                         <p>🎬 {runtime} 분</p>
                         <p>⭐ {rating} / 10.0 </p>
-                        <p>{overview}</p>
+                        <p className="content">
+                            {
+                                overview && overview.length > 150 ? `${overview.slice(0, 149)}...` : overview
+                            }
+                        </p>
                     </MovieInfo>
                 </MovieContainer>
             </MovieWrapper>
@@ -31,7 +35,7 @@ export default MovieDetail;
 const MovieWrapper = styled.div`
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 `;
 
 const MovieDetailBg = styled.div`
@@ -40,18 +44,23 @@ const MovieDetailBg = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(${(props) => props.bgImg});
+    background-image: url(${props => props.posterImg});
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     filter: brightness(50%);
-`;
 
+    @media ${props => props.theme.tablet} {
+        background-image: url(${props => props.bgImg});
+    }
+`;
 const MovieContainer = styled.div`
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -59,36 +68,44 @@ const MovieContainer = styled.div`
 `;
 
 const MoviePoster = styled.div`
+    display: block;
     width: 250px;
     height: 400px;
+    margin-bottom: 10px;
     background-image: url(${(props) => props.posterImg});
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center center;
-    margin-right: 50px;
 `;
 
 const MovieInfo = styled.div`
-    width: 50%;
     display: flex;
+    width: 100vw;
     flex-direction: column;
+    align-items: center;
     color: #fff;
-
+    
     h1 {
-        font-size: 40px;
+        font-size: 30px;
         margin-bottom: 10px;
     }
     p {
         font-size: 18px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+    }
+    p.content {
+        padding: 0 20px;
+        margin-bottom: 0;
     }
 `;
 
 const GenreWrapper = styled.div`
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 `;
 
 const GenreItems = styled.div`
+    font-size: 14px;
     margin-right: 10px;
     border: 1px solid #eee;
     border-radius: 50px;
@@ -98,6 +115,11 @@ const GenreItems = styled.div`
     &:hover {
         background-color: #eee;
         color: #000;
+        font-weight: bold;
         cursor: pointer;
+    }
+
+    &:last-child {
+        margin-right: 0;
     }
 `;
