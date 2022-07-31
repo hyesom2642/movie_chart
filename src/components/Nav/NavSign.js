@@ -1,5 +1,6 @@
 // > css 
 import styled from 'styled-components';
+import { GiHamburgerMenu } from "react-icons/gi";
 
 // > components 
 import SignUp from '../Modal/SignUp';
@@ -33,6 +34,9 @@ const NavSign = () => {
                     로그인
                 </SignItem>
             </SignContainer>
+            <MenuIcon>
+                <GiHamburgerMenu />
+            </MenuIcon>
             {
                 changeModal === "회원가입" && (
                     <SignUp openModal={openModal} closeModalHandle={closeModalHandle} />
@@ -49,7 +53,30 @@ const NavSign = () => {
 export default NavSign;
 
 const SignContainer = styled.ul`
+    display: none;
+
+    @media ${props => props.theme.desktop} {
+        display: flex;
+    }
+`;
+const MenuIcon= styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+
+    @media ${props => props.theme.tablet} {
+        width: 40px;
+        height: 40px;
+        font-size: 40px;
+    }
+    @media ${props => props.theme.desktop} {
+        display: none;
+    }
 `;
 const SignItem = styled.li`
     cursor: pointer;
