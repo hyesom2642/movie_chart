@@ -26,11 +26,34 @@ const TopRatedSlider = ({topRatedMovies}) => {
             </LatestTitle>
             <LatestSwiper
                 modules={[Navigation, Autoplay]}
-                spaceBetween={30}
-                slidesPerView={5}
+                spaceBetween={0}
+                slidesPerView={1}
+                centeredSlide={true}
                 navigation
                 loop={true}
                 autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+                breakpoints={{
+                    576: {
+                        slidesPerView: 2,
+                        spaceBetween: 25,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    900: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                    },
+                    1200: {
+                        slidesPerView: 5,
+                        spaceBetween: 10,
+                    },
+                    1600: {
+                        slidesPerView: 6,
+                        spaceBetween: 10,
+                    },
+                }}
             >
                 {
                     topRatedMovies && topRatedMovies.map((topRatedMovie) => (
@@ -55,14 +78,25 @@ const LatestTitle = styled.div`
     text-align: center;
 
     a {
-        font-size: 50px;
+        font-size: 30px;
         font-weight: bold;
         color: #fff;
+    }
+
+    @media ${props => props.theme.tablet} {
+        a {
+            font-size: 40px;
+        }
+    }
+    @media ${props => props.theme.desktop} {
+        a {
+            font-size: 50px;
+        }
     }
 `;
 
 const LatestSwiper = styled(Swiper)`
-    width: 90%;
+    width: 90vw;
 
     .swiper-slide img {
         display: block;
@@ -70,15 +104,34 @@ const LatestSwiper = styled(Swiper)`
         height: 100%;
         object-fit: cover;
     }
-    .swiper-slide:last-child {
-        a {
-            margin-right: 0;
-        }
+
+    .swiper-slide > a {
+        display: flex;
+        justify-content: center;
+        align-itmes: center;
     }
+
     .swiper-button-next::after,
     .swiper-button-prev::after {
-        font-size: 60px;
+        font-size: 40px;
         color: #fff;
         font-weight: bold;
+    }
+
+    @media ${props => props.theme.tablet} {
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 50px;
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+    @media ${props => props.theme.desktop} {
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 60px;
+            color: #fff;
+            font-weight: bold;
+        }
     }
 `;
