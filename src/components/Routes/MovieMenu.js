@@ -107,8 +107,23 @@ const Container = styled.div`
 
 const Movies = styled.div`
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px;
-    width: 80%;
+    width: 100%;
     margin-top: 100px;
+
+    @media ${props => props.theme.tablet} {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+        width: 80%;
+        margin-top: 100px;
+    }
+    @media ${props => props.theme.desktop} {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 15px;
+        width: 80%;
+        margin-top: 100px;
+    }
 `;
