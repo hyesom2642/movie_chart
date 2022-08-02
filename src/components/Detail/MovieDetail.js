@@ -54,6 +54,7 @@ const MovieDetailBg = styled.div`
         background-image: url(${props => props.bgImg});
     }
 `;
+
 const MovieContainer = styled.div`
     position: absolute;
     left: 50%;
@@ -65,6 +66,10 @@ const MovieContainer = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+
+    @media ${props => props.theme.desktop} {
+        flex-direction: row;
+    }
 `;
 
 const MoviePoster = styled.div`
@@ -76,6 +81,10 @@ const MoviePoster = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+
+    @media ${props => props.theme.desktop} {
+        margin-bottom: 0;
+    }
 `;
 
 const MovieInfo = styled.div`
@@ -97,11 +106,43 @@ const MovieInfo = styled.div`
         padding: 0 20px;
         margin-bottom: 0;
     }
+
+    @media ${props => props.theme.tablet} {
+        h1 {
+            font-size: 35px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        p.content {
+            padding: 0 60px;
+        }
+    }
+
+    @media ${props => props.theme.desktop} {
+        width: 60vw;
+        padding: 0 30px;
+
+        h1 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 22px;
+        }
+        p.content {
+            padding: 0;
+        }
+    }
 `;
 
 const GenreWrapper = styled.div`
     display: flex;
     margin-bottom: 5px;
+
+    @media ${props => props.theme.desktop} {
+        margin-bottom: 10px;
+    }
 `;
 
 const GenreItems = styled.div`
