@@ -62,6 +62,7 @@ const TextBox= styled.div`
     align-items: center;
 
     p {
+        text-align: center;
         font-size: 18px;
         font-weight: bold;
     }
