@@ -1,5 +1,5 @@
 // 로그인
-// > css 
+// > styled-components 
 import styled from 'styled-components';
 
 // > icons 
@@ -46,7 +46,7 @@ const Overlay = styled.div`
 
 const ModalBox = styled.div`
     position: absolute;
-    width: 600px;
+    width: 350px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 25%);
@@ -56,6 +56,13 @@ const ModalBox = styled.div`
     z-index: 20;
     text-align: center;
     overflow: hidden;
+
+    @media ${props => props.theme.tablet} {
+        width: 500px;
+    }
+    @media ${props => props.theme.desktop} {
+        width: 600px;
+    }
 `;
 
 const Header = styled.div`
@@ -66,29 +73,48 @@ const Header = styled.div`
     padding: 10px 0;
 `;
 const Title = styled.h1`
-    font-size: 30px;
+    font-size: 20px;
     color: #fff;
+
+    @media ${props => props.theme.tablet} {
+        font-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        font-size: 30px;
+    }
 `;
 const CloseBtn = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     right: 10%;
     top: 25%;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: #fff;
     cursor: pointer;
+
+    @media ${props => props.theme.tablet} {
+        width: 25px;
+        height: 25px;
+        font-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        width: 30px;
+        height: 30px;    
+        font-size: 30px;
+    }
 `;
 
-const Content = styled.div`
+const Content = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: 100%;
     padding: 30px 50px;
 `;
 
@@ -98,11 +124,32 @@ const Email = styled.div`
     margin-bottom: 30px;
 `;
 const EmailLabel = styled.label`
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
+
+    @media ${props => props.theme.tablet} {
+        fotn-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        font-size: 30px;
+    }
 `;
 const EmailInput = styled.input`
+    width: 250px;
     border: 1px solid #eee;
+    outline: none;
+    padding: 10px;
+
+    &:focus {
+        border: 2px solid #202020;
+    }
+
+    @media ${props => props.theme.tablet} {
+        width: 400px;
+    }
+    @media ${props => props.theme.desktop} {
+        width: 500px;
+    }
 `;
 
 const Password = styled.div`
@@ -111,18 +158,39 @@ const Password = styled.div`
     margin-bottom: 30px;
 `;
 const PasswordLabel = styled.label`
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
+
+    @media ${props => props.theme.tablet} {
+        fotn-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        font-size: 30px;
+    }
 `;
 const PasswordInput = styled.input`
+    width: 250px;
     border: 1px solid #eee;
+    outline: none;
+    padding: 10px;
+
+    &:focus {
+        border: 2px solid #202020;
+    }
+
+    @media ${props => props.theme.tablet} {
+        width: 400px;
+    }
+    @media ${props => props.theme.desktop} {
+        width: 500px;
+    }
 `;
 
 const SubmitBtn = styled.button`
     width: 100%;
     background-color: #424242;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     color: #fff;
     padding: 10px; 0;
@@ -130,5 +198,12 @@ const SubmitBtn = styled.button`
 
     &:hover {
         opacity: 0.8;
+    }
+
+    @media ${props => props.theme.tablet} {
+        fotn-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        font-size: 30px;
     }
 `;

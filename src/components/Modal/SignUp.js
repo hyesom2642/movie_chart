@@ -1,5 +1,5 @@
 // 회원가입
-// > css 
+// > styled-components 
 import styled from 'styled-components';
 
 // > icons 
@@ -17,7 +17,19 @@ const SignUp = ({openModal, closeModalHandle}) => {
                     </CloseBtn>
                 </Header>
                 <Content>
-
+                    <Email>
+                        <EmailLabel for="user-email">이메일</EmailLabel>
+                        <EmailInput required type="email" id="user-email" placeholder='이메일 주소' />
+                    </Email>
+                    <Name>
+                        <NameLabel for="user-name">이름</NameLabel>
+                        <NameInput required type="text" id="user-name" placeholder='사용자 이름' />
+                    </Name>
+                    <Password>
+                        <PasswordLabel for="user-pw">비밀번호</PasswordLabel>
+                        <PasswordInput required type="password" id="user-pw" placeholder='비밀번호' />
+                    </Password>
+                    <SubmitBtn type="submit">가입</SubmitBtn>
                 </Content>
             </ModalBox>
         </>
@@ -38,7 +50,7 @@ const Overlay = styled.div`
 
 const ModalBox = styled.div`
     position: absolute;
-    width: 600px;
+    width: 350px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 25%);
@@ -47,6 +59,14 @@ const ModalBox = styled.div`
     border-radius: 25px;
     z-index: 20;
     text-align: center;
+    overflow: hidden;
+
+    @media ${props => props.theme.tablet} {
+        width: 500px;
+    }
+    @media ${props => props.theme.desktop} {
+        width: 600px;
+    }
 `;
 
 const Header = styled.div`
@@ -57,29 +77,171 @@ const Header = styled.div`
     padding: 10px 0;
 `;
 const Title = styled.h1`
-    font-size: 30px;
+    font-size: 20px;
     color: #fff;
+
+    @media ${props => props.theme.tablet} {
+        font-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        font-size: 30px;
+    }
 `;
 const CloseBtn = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     right: 10%;
     top: 25%;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: #fff;
     cursor: pointer;
+
+    @media ${props => props.theme.tablet} {
+        width: 25px;
+        height: 25px;
+        font-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        width: 30px;
+        height: 30px;    
+        font-size: 30px;
+    }
 `;
 
-const Content = styled.div`
+const Content = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 50px;
+    padding: 30px 50px;
+`;
+
+const Email = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+`;
+const EmailLabel = styled.label`
+    font-size: 20px;
+    font-weight: bold;
+
+    @media ${props => props.theme.tablet} {
+        fotn-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        font-size: 30px;
+    }
+`;
+const EmailInput = styled.input`
+    width: 250px;
+    border: 1px solid #eee;
+    outline: none;
+    padding: 10px;
+
+    &:focus {
+        border: 2px solid #202020;
+    }
+
+    @media ${props => props.theme.tablet} {
+        width: 400px;
+    }
+    @media ${props => props.theme.desktop} {
+        width: 500px;
+    }
+`;
+
+const Name = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+`;
+const NameLabel = styled.label`
+    font-size: 20px;
+    font-weight: bold;
+
+    @media ${props => props.theme.tablet} {
+        fotn-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        font-size: 30px;
+    }
+`;
+const NameInput = styled.input`
+    width: 250px;
+    border: 1px solid #eee;
+    outline: none;
+    padding: 8px;
+
+    &:focus {
+        border: 2px solid #202020;
+    }
+
+    @media ${props => props.theme.tablet} {
+        width: 400px;
+    }
+    @media ${props => props.theme.desktop} {
+        width: 500px;
+    }
+`;
+
+const Password = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+`;
+const PasswordLabel = styled.label`
+    font-size: 20px;
+    font-weight: bold;
+
+    @media ${props => props.theme.tablet} {
+        fotn-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        font-size: 30px;
+    }
+`;
+const PasswordInput = styled.input`
+    width: 250px;
+    border: 1px solid #eee;
+    outline: none;
+    padding: 8px;
+
+    &:focus {
+        border: 2px solid #202020;
+    }
+
+    @media ${props => props.theme.tablet} {
+        width: 400px;
+    }
+    @media ${props => props.theme.desktop} {
+        width: 500px;
+    }
+`;
+
+const SubmitBtn = styled.button`
+    width: 100%;
+    background-color: #424242;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px; 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    @media ${props => props.theme.tablet} {
+        fotn-size: 25px;
+    }
+    @media ${props => props.theme.desktop} {
+        font-size: 30px;
+    }
 `;
