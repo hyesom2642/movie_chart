@@ -5,7 +5,8 @@ import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // > components 
-import Nav from './components/Nav/Nav';
+import Navbar from './components/Nav/Navbar';
+// import Nav from './components/Nav/Nav';
 import Home from './components/Routes/Home';
 import MovieMenu from './components/Routes/MovieMenu';
 import Detail from './components/Routes/Detail';
@@ -25,7 +26,8 @@ const App = () => {
       ? <Loading />
       :
       <>
-        <Nav />
+        <Navbar />
+        {/* <Nav /> */}
         <Routes>
           <Route path={"/"} element={<Home />} />
           <Route path={`/page/:menu`} element={<MovieMenu />} />
