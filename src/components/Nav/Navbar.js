@@ -45,9 +45,9 @@ const Navbar = () => {
             </MenuIcon>
             <Sidebar>
               <NavLogo>
-                <Link to="/">
+                <a href="/">
                   HEYON CINEMA
-                </Link>
+                </a>
               </NavLogo>
               <NavbarMenu>
                 {
