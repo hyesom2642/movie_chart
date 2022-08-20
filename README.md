@@ -12,15 +12,15 @@
 
 ## 1. pc
 
-![screen-pc](src\assets\images\movie-pc.png)
+![screen-pc](./src/assets/images/movie-pc.png)
 
 ## 2. tablet
 
-![screen-tablet](src\assets\images\movie-tablet.png)
+![screen-tablet](./src/assets/images/movie-tablet.png)
 
 ## 3. mobile
 
-![screen-mobile](src\assets\images\movie-mobile.png)
+![screen-mobile](./src/assets/images/movie-mobile.png)
 
 ---
 
@@ -35,21 +35,21 @@
 - ③ 클릭시 회원가입과 로그인form modal 팝업
 - ④ window.scrollY가 50이상일 경우 배경색이 검정색이 되도록 만듦
 
-![header-desc](src\assets\images\header-1.png)
+![header-desc](./src/assets/images/header-1.png)
 
 (2) MainSlider
 
 - ① react swiper를 사용하여 현재 상영중인 영화 6편을 slider로 만듦
 - ② axios를 사용하여 The Movie Database(TMDB)사이트의 API를 가져와서 slide에 넣어줌
 
-![main-slider](src\assets\images\main-slider.gif)
+![main-slider](./src/assets/images/main-slider.gif)
 
 (3) TopRatedSlider, UpComingSlider
 
 - ① react swiper를 사용하여 영화 평점순, 상영예정작인 영화 20편을 slider로 만듦
 - ② 영화 포스터를 hover시 영화제목과 평점이 나오며 클릭하면 해당 영화의 상세 페이지로 이동
 
-![sub-slider](src\assets\images\sub-slider.gif)
+![sub-slider](./src/assets/images/sub-slider.gif)
 
 ---
 
@@ -60,15 +60,15 @@
 
 ### 1. pc
 
-![screen-pc](src\assets\images\detail-pc.png)
+![screen-pc](./src/assets/images/detail-pc.png)
 
 ### 2. tablet
 
-![screen-tablet](src\assets\images\detail-tablet.png)
+![screen-tablet](./src/assets/images/detail-tablet.png)
 
 ### 3. mobile
 
-![screen-mobile](src\assets\images\detail-mobile.png)
+![screen-mobile](./src/assets/images/detail-mobile.png)
 
 ---
 
@@ -76,7 +76,7 @@
 
 - 상영중인 영화를 클릭했을 경우
 
-![menu-nowplaying](src\assets\images\now-playing.png)
+![menu-nowplaying](./src/assets/images/now-playing.png)
 
 ## 👩‍💻 추가해야 될 것
 
