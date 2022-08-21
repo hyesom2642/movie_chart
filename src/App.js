@@ -27,7 +27,6 @@ const App = () => {
       :
       <>
         <Navbar />
-        {/* <Nav /> */}
         <Routes>
           <Route path={`/movie_chart`} element={<Home />} />
           <Route path={`/movie_chart/page/:menu`} element={<MovieMenu />} />

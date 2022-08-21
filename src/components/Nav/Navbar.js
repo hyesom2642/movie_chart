@@ -54,7 +54,7 @@ const Navbar = () => {
                   NavMenu.map( (NavMenu, i) => {
                     return (
                       <NavbarMenuItem key={i}>
-                        <Link to={`/page/${NavMenu.path}`}>
+                        <Link to={`/movie_chart/page/${NavMenu.path}`}>
                           {NavMenu.title}
                         </Link>
                       </NavbarMenuItem>
@@ -89,7 +89,7 @@ const Navbar = () => {
             NavMenu.map( (NavMenu, i) => {
               return (
                 <NavbarMenuItem key={i}>
-                  <Link to={`/page/${NavMenu.path}`}>
+                  <Link to={`/movie_chart/page/${NavMenu.path}`}>
                     {NavMenu.title}
                   </Link>
                 </NavbarMenuItem>

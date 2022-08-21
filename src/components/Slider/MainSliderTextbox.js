@@ -8,10 +8,10 @@ const MainSliderTextbox = ({id, title, overview}) => {
     return(
         <>
         <Container>
-            <Link to={'/page/now_playing'}>
+            <Link to={'/movie_chart/page/now_playing'}>
                 <NowPlayingText>절찬상영중</NowPlayingText>
             </Link>
-            <Link to={`/movie/${id}`}>
+            <Link to={`/movie_chart/movie/${id}`}>
                 <Title>{title}</Title>
             </Link>
             <Overview>

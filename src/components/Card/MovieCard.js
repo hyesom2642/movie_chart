@@ -11,7 +11,7 @@ const MovieCard = ({id, title, posterUrl, vote}) => {
 
     return(
         <>
-            <Link to={`/movie/${id}`}>
+            <Link to={`/movie_chart/movie/${id}`}>
                 <Movie onMouseMove={() => {setShow(true)}}
                         onMouseLeave={() => {setShow(false)}}>
                     <img src={posterUrl} alt={title} 

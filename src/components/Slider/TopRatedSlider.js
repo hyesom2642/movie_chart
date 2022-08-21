@@ -20,7 +20,7 @@ const TopRatedSlider = ({topRatedMovies}) => {
     return(
         <>
             <LatestTitle>
-                <Link to={"/page/latest"}>
+                <Link to={"/movie_chart/page/latest"}>
                     평점 높은 영화
                 </Link>
             </LatestTitle>

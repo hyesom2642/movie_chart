@@ -20,7 +20,7 @@ const UpComingSlider = ({upComingMovies}) => {
     return(
         <>
             <UpComingTitle>
-                <Link to={"/page/latest"}>
+                <Link to={"/movie_chart/page/latest"}>
                     상영 예정작
                 </Link>
             </UpComingTitle>

@@ -10,7 +10,7 @@ import "swiper/css";
 const MainSliderCard = ({id, title, imgurl}) => {
     return(
         <>
-            <Link to={`/movie/${id}`}>
+            <Link to={`/movie_chart/movie/${id}`}>
                 <SlideImage>
                     <img src={imgurl} alt={title} />
                 </SlideImage>

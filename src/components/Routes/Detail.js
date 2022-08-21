@@ -40,7 +40,7 @@ const Detail = () => {
     return(
         <>
             <DetailContainer>
-                <Link to="/">
+                <Link to="/movie_chart">
                     <BackIcon />
                 </Link>
                 <MovieDetail 

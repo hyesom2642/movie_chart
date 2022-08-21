@@ -32,7 +32,7 @@ const NavItem = ({NavItem_Obj}) => {
                         NavItem_Obj.map(({title, path}) => {
                             return(
                                 <NavMenuItem key={title}>
-                                    <Link to={`/page/${path}`}>
+                                    <Link to={`/movie_chart/page/${path}`}>
                                         {title}
                                     </Link>
                                 </NavMenuItem>
@@ -53,7 +53,7 @@ const NavItem = ({NavItem_Obj}) => {
                             return(
                                 <>
                                     <NavMenuItem key={title}>
-                                        <Link to={`/page/${path}`}>
+                                        <Link to={`/movie_chart/page/${path}`}>
                                             {title}
                                         </Link>
                                     </NavMenuItem>
